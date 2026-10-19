@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<title>CAMORA Studio | Web design and development</title>
+<meta name="description" content="CAMORA Studio is an independent web studio building websites, portfolios and landing pages for small businesses.">
+<meta property="og:title" content="CAMORA Studio">
+<meta property="og:description" content="Websites that work as hard as you do.">
+<script>try{var s=localStorage.getItem('camora-theme');document.documentElement.dataset.theme=s||'dark'}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CAMORA Studio","email":"camorastudio3@gmail.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0d;--bg2:#141415;--text:#f2efe8;--muted:#a19c92;--line:#2b2b2d;--accent:#d8c9a8;--serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Jost','Century Gothic',Arial,sans-serif;--ease:cubic-bezier(.22,.8,.2,1);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f6f2ea;--bg2:#ece6da;--text:#151515;--muted:#5c5850;--line:#d9d2c4;--accent:#7a5c22;color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0 0 1em;color:var(--muted);max-width:56ch}
+a{color:inherit}
+em{font-style:italic;color:var(--accent)}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--text);color:var(--bg);padding:10px 16px;z-index:50}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 10px)}
+.wrap{width:min(1160px,100% - 40px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px));margin-inline:auto}
+section{padding:clamp(72px,10vw,128px) 0}
+.alt{background:var(--bg2)}
+h2{font-size:clamp(36px,5.4vw,68px);margin-bottom:clamp(36px,6vw,64px)}
+.logoimg{display:block;mix-blend-mode:lighten}
+:root[data-theme="light"] .logoimg{filter:invert(1) brightness(1.25) contrast(1.1);mix-blend-mode:multiply}
+
+header{position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,background .4s}
+header.scrolled{border-color:var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.brand span{font-size:14px;letter-spacing:.34em}
+header nav{display:flex;align-items:center;gap:30px}
+header nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+header nav a{text-decoration:none;font-size:15px;color:var(--muted);transition:color .25s}
+header nav a:hover,header nav a[aria-current="true"]{color:var(--text)}
+.tools{display:flex;align-items:center;gap:12px}
+.theme,.menu-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:none;color:var(--text);cursor:pointer;transition:border-color .3s,transform .4s var(--ease)}
+.theme:hover,.menu-btn:hover{border-color:var(--accent)}
+.theme:active{transform:rotate(25deg) scale(.94)}
+.theme svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.theme .sun{display:none}
+:root[data-theme="light"] .theme .sun{display:block}
+:root[data-theme="light"] .theme .moon{display:none}
+.menu-btn{display:none}
+.menu-btn i,.menu-btn i::before{display:block;width:16px;height:1.5px;background:currentColor;position:relative;transition:transform .3s var(--ease)}
+.menu-btn i::before{content:"";position:absolute;top:-5px}
+.menu-btn[aria-expanded="true"] i{transform:translateY(0) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i::before{top:0;transform:rotate(90deg)}
+.btn{display:inline-block;padding:14px 30px;border-radius:99px;border:1px solid var(--text);font:500 15px var(--sans);text-decoration:none;color:var(--text);background:none;cursor:pointer;transition:background .3s,color .3s,transform .3s var(--ease)}
+.btn:hover{background:var(--text);color:var(--bg)}
+.btn.solid{background:var(--text);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn:active{transform:scale(.97)}
+.btn[disabled]{opacity:.6;cursor:wait}
+header nav .btn{padding:10px 22px}
+
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(64px,9vw,110px)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
+h1{font-size:clamp(46px,7.4vw,104px);letter-spacing:-.035em}
+.hero p{font-size:clamp(18px,1.7vw,21px);margin:28px 0 36px}
+.hero .btn{margin:0 10px 10px 0}
+.hero-logo img{width:100%;height:auto}
+
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:70px 1fr 1fr;gap:24px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .45s var(--ease),background .3s}
+.row .n{font-size:14px;color:var(--accent);letter-spacing:.1em}
+.row h3{font-size:clamp(26px,3.6vw,44px);transition:color .3s,transform .45s var(--ease)}
+.row p{margin:0}
+.row:hover h3{color:var(--accent);transform:translateX(10px)}
+.work .row{grid-template-columns:70px 1fr auto}
+.work .go{font-size:15px;color:var(--muted);transition:color .3s,transform .4s var(--ease)}
+.work .row:hover .go{color:var(--accent);transform:translate(4px,-4px)}
+
+
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.photo{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--bg2);margin-bottom:20px}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;transition:transform 1s var(--ease)}
+.person:hover .photo img{transform:scale(1.04)}
+.person h3{font-size:clamp(24px,2.6vw,32px)}
+.role{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:start}
+.contact h2{margin-bottom:28px}
+address{font-style:normal}
+.mail{font:300 clamp(20px,2.6vw,30px) var(--serif);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:color .3s}
+.mail:hover{color:var(--accent)}
+.social{display:flex;gap:22px;margin-top:28px;font-size:15px}
+.social a{color:var(--muted);text-decoration:none;transition:color .3s}
+.social a:hover{color:var(--accent)}
+form{display:grid;gap:26px}
+label{display:grid;gap:4px;font-size:14px;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:17px;color:var(--text);background:none;border:0;border-bottom:1px solid var(--line);padding:10px 0;width:100%;border-radius:0;transition:border-color .3s}
+select option{background:var(--bg);color:var(--text)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+input:user-invalid,textarea:user-invalid{border-color:#c27c7c}
+textarea{min-height:110px;resize:vertical}
+.hp{position:absolute;left:-9999px;opacity:0}
+.note{font-size:15px;min-height:1.6em;margin:0}
+.note.ok{color:#5da97a}.note.err{color:#c27c7c}
+form .btn{justify-self:start}
+
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1,.js .hero p,.js .hero .btn{animation:up .9s var(--ease) both}
+.js .hero p{animation-delay:.15s}.js .hero .btn{animation-delay:.3s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .hero .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-logo{max-width:420px}
+  .row,.work .row{grid-template-columns:40px 1fr}
+  .row p,.work .go{grid-column:2}
+  .steps{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .person:nth-child(2){margin-top:0}
+  .menu-btn{display:grid}
+  header nav ul{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:6px 20px 20px;background:var(--bg);border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+  header nav ul.open{opacity:1;visibility:visible;transform:none}
+  header nav li{border-bottom:1px solid var(--line)}header nav li a{display:block;padding:16px 0;font-size:18px}
+  header nav>.btn{display:none}
+  header nav{gap:0}
+}
+@media (max-width:520px){.steps,.team{grid-template-columns:1fr}.brand span{display:none}}
+
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:clamp(48px,7vw,80px) 0 calc(28px + env(safe-area-inset-bottom,0px));font-size:15px;transition:background .4s}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1.3fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,5vw,56px)}
+.fabout p{margin:18px 0 0;font-size:15px;max-width:34ch}
+.fabout .brand img{height:48px}
+.fcol h2{font:500 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+.fcol ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fcol a{color:var(--muted);text-decoration:none;transition:color .3s}
+.fcol a:hover{color:var(--text)}
+.fbottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.fbottom a{color:var(--muted);text-decoration:none;transition:color .3s}
+.fbottom a:hover{color:var(--accent)}
+@media (min-width:901px){.hero .wrap{grid-template-columns:1.35fr .65fr}.hero-logo{max-width:330px;justify-self:end}}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}.fabout{grid-column:1/-1}.hero-logo{max-width:300px}}
+@media (max-width:380px){.foot{grid-template-columns:1fr}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc-card{position:relative;display:flex;flex-direction:column;padding:34px 30px 30px;border:1px solid var(--line);border-radius:20px;background:var(--bg);overflow:hidden;transition:translate .5s var(--ease),border-color .4s,box-shadow .5s}
+.svc-card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at 100% 0,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%);opacity:0;transition:opacity .5s}
+.svc-card:hover{translate:0 -6px;border-color:var(--accent);box-shadow:0 26px 50px -30px color-mix(in srgb,var(--accent) 60%,transparent)}
+.svc-card:hover::before{opacity:1}
+.svc-card>*:not(.num){position:relative}
+.ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);margin-bottom:28px}
+.ico svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.num{position:absolute;right:28px;top:22px;font:italic 300 46px/1 var(--serif);color:var(--accent);opacity:.3}
+.svc-card h3{font-size:clamp(26px,2.6vw,32px);margin-bottom:12px}
+.svc-card p{font-size:16px;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 30px;padding:0}
+.chips li{font-size:13px;padding:5px 14px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.more{margin-top:auto;display:inline-flex;gap:8px;align-items:center;font-weight:500;font-size:15px;text-decoration:none;color:var(--text);transition:gap .3s,color .3s}
+.svc-card:hover .more{color:var(--accent);gap:14px}
+/* work */
+.proj-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:22px}
+.proj{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg);text-decoration:none;transition:translate .5s var(--ease),border-color .4s,box-shadow .5s}
+.proj.big{grid-row:span 2}
+.proj:hover{translate:0 -6px;border-color:var(--accent);box-shadow:0 26px 50px -30px color-mix(in srgb,var(--accent) 60%,transparent)}
+.cover{position:relative;display:flex;flex-direction:column;flex:1;min-height:230px;overflow:hidden;background:var(--bg2)}
+.proj.big .cover{min-height:440px}
+.cover.c1{background:radial-gradient(120% 100% at 0 0,color-mix(in srgb,var(--accent) 34%,var(--bg2)),var(--bg2) 68%)}
+.cover.c2{background:radial-gradient(120% 100% at 100% 0,color-mix(in srgb,var(--accent) 28%,var(--bg2)),var(--bg2) 68%)}
+.cover.c3{background:radial-gradient(120% 100% at 0 100%,color-mix(in srgb,var(--accent) 28%,var(--bg2)),var(--bg2) 68%)}
+.cover::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/44px 44px;opacity:.55;-webkit-mask-image:radial-gradient(circle at 50% 60%,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 60%,#000,transparent 75%)}
+.bar{position:relative;display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 55%,transparent)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.bar span{margin-left:12px;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cv-title{position:relative;margin:auto;padding:24px 20px;text-align:center;font:300 clamp(34px,4.4vw,60px)/1.04 var(--serif);letter-spacing:-.02em;transition:transform .8s var(--ease)}
+.proj:hover .cv-title{transform:scale(1.06)}
+.idx{position:absolute;right:22px;bottom:12px;font:italic 300 56px/1 var(--serif);color:var(--accent);opacity:.3}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 26px;border-top:1px solid var(--line)}
+.meta h3{font-size:clamp(22px,2.2vw,28px)}
+.go{font-size:15px;color:var(--accent);white-space:nowrap}
+.go b{display:inline-block;font-weight:400;transition:transform .4s var(--ease)}
+.proj:hover .go b{transform:translate(4px,-4px)}
+.js .svc-card.rv,.js .proj.rv{transition:opacity .8s var(--ease),transform .8s var(--ease),translate .5s var(--ease),border-color .4s,box-shadow .5s}
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);max-width:none;align-items:stretch}
+.person{margin-top:0!important}
+.photo{position:relative;aspect-ratio:9/10;margin:0;border-radius:20px;overflow:hidden;background:var(--bg)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transition:transform 1.2s var(--ease)}
+.person:hover .photo img{transform:scale(1.05)}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:80px 24px 22px;background:linear-gradient(to top,rgba(8,8,8,.86),rgba(8,8,8,.45) 55%,transparent)}
+.cap h3{font-size:clamp(22px,2.4vw,30px);color:#fff}
+.cap .role{margin-top:6px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e6d9bb}
+@media (max-width:900px){.svc,.proj-grid{grid-template-columns:1fr}.proj.big{grid-row:auto}.proj.big .cover{min-height:300px}.team{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.team{grid-template-columns:1fr}.photo{aspect-ratio:4/3.4}.photo img{object-position:50% 22%}}
+
+/* mobile polish */
+html{-webkit-tap-highlight-color:transparent}
+img{max-width:100%;height:auto}
+@media (max-width:900px){
+  header nav ul{max-height:calc(100dvh - 90px);overflow-y:auto}
+  .tools{gap:10px}
+  .hero-logo{margin-inline:auto;max-width:260px}
+  .hero .wrap{text-align:left}
+}
+@media (max-width:700px){
+  .tools .btn{display:none}
+  header .wrap{height:68px}
+  .hero{padding-top:36px}
+  h2{margin-bottom:32px}
+  .svc-card{padding:28px 24px 24px}
+  .meta{padding:18px 20px}
+  .contact .wrap{gap:36px}
+  .fbottom{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:520px){
+  .hero .btn{display:block;text-align:center;margin:0 0 12px}
+  .hero-logo{max-width:220px}
+  form .btn{justify-self:stretch;text-align:center}
+}
+@media (hover:none){
+  .svc-card:hover,.proj:hover{translate:none;box-shadow:none}
+  .person:hover .photo img,.proj:hover .cv-title{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="CAMORA Studio home"><img class="logoimg" src="logo-mark.jpg" alt=""><span>CAMORA STUDIO</span></a>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <div class="tools">
+        <button class="theme" type="button" aria-label="Switch theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <a class="btn" href="#contact">Start a project</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <h1>Websites that work <em>as hard as you do.</em></h1>
+      <p>A small studio making fast, good-looking websites for small businesses.</p>
+      <a class="btn solid" href="#contact">Start a project</a>
+      <a class="btn" href="#work">See our work</a>
+    </div>
+    <div class="hero-logo"><img class="logoimg" src="logo-full.jpg" alt="CAMORA Studio logo"></div>
+  </div>
+</section>
+
+<section class="alt" id="services" aria-labelledby="t-services">
+  <div class="wrap">
+    <h2 id="t-services">What we <em>build</em></h2>
+    <div class="svc">
+      <article class="svc-card" data-type="Business website">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Business websites</h3>
+        <p>Clear sites that show what you do and make it easy for customers to reach you.</p>
+        <ul class="chips"><li>Responsive</li><li>Contact form</li><li>Fast loading</li></ul>
+        <a class="more" href="#contact">Start this project <span aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="svc-card" data-type="Portfolio website">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div>
+        <h3>Portfolio websites</h3>
+        <p>A home for your projects and skills, for students, freelancers and creatives.</p>
+        <ul class="chips"><li>Project showcase</li><li>About you</li><li>Easy to update</li></ul>
+        <a class="more" href="#contact">Start this project <span aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="svc-card" data-type="Landing page">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></div>
+        <h3>Landing pages</h3>
+        <p>One focused page for a product, event or campaign.</p>
+        <ul class="chips"><li>One clear goal</li><li>Mobile first</li><li>Quick to launch</li></ul>
+        <a class="more" href="#contact">Start this project <span aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work" aria-labelledby="t-work">
+  <div class="wrap">
+    <h2 id="t-work">Selected <em>work</em></h2>
+    <div class="proj-grid">
+      <a class="proj big" href="https://github.com/ambikaaa12/Portfolio" target="_blank" rel="noopener">
+        <div class="cover c1"><div class="bar"><i></i><i></i><i></i><span>github.com/ambikaaa12/Portfolio</span></div><div class="cv-title">Portfolio<br><em>website</em></div><span class="idx">01</span></div>
+        <div class="meta"><h3>Portfolio website</h3><span class="go">View project <b>&#8599;</b></span></div>
+      </a>
+      <a class="proj" href="https://github.com/ambikaaa12/amazon-clone" target="_blank" rel="noopener">
+        <div class="cover c2"><div class="bar"><i></i><i></i><i></i><span>github.com/ambikaaa12/amazon-clone</span></div><div class="cv-title">Amazon<br><em>clone</em></div><span class="idx">02</span></div>
+        <div class="meta"><h3>Amazon clone</h3><span class="go">View project <b>&#8599;</b></span></div>
+      </a>
+      <a class="proj" href="https://github.com/ambikaaa12/SafePulse" target="_blank" rel="noopener">
+        <div class="cover c3"><div class="bar"><i></i><i></i><i></i><span>github.com/ambikaaa12/SafePulse</span></div><div class="cv-title">Safe<em>Pulse</em></div><span class="idx">03</span></div>
+        <div class="meta"><h3>SafePulse</h3><span class="go">View project <b>&#8599;</b></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="team" aria-labelledby="t-team">
+  <div class="wrap">
+    <h2 id="t-team">Three minds, <em>one studio</em></h2>
+    <div class="team">
+      <article class="person"><div class="photo"><img src="ambika.jpg" alt="Ambika Kumari A S" width="600" height="666"><div class="cap"><h3>Ambika Kumari A S</h3><div class="role">Development</div></div></div></article>
+      <article class="person"><div class="photo"><img src="monika.jpg" alt="Monika Choudhary" width="600" height="666"><div class="cap"><h3>Monika Choudhary</h3><div class="role">Client communication</div></div></div></article>
+      <article class="person"><div class="photo"><img src="chaithra.jpg" alt="Chaithra C" width="600" height="666"><div class="cap"><h3>Chaithra C</h3><div class="role">Design and quality</div></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-contact">
+  <div class="wrap">
+    <div>
+      <h2 id="t-contact">Tell us about <em>your project</em></h2>
+      <address><a class="mail" href="mailto:camorastudio3@gmail.com">camorastudio3@gmail.com</a></address>
+      <div class="social"><a href="https://github.com/ambikaaa12" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+    <form id="f">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Project type<select name="type"><option>Business website</option><option>Portfolio website</option><option>Landing page</option><option>Something else</option></select></label>
+      <label>Project details<textarea name="msg" required></textarea></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn solid" type="submit">Send enquiry</button>
+      <p class="note" id="status" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="fcol fabout">
+      <a class="brand" href="#home" aria-label="CAMORA Studio home"><img class="logoimg" src="logo-mark.jpg" alt=""><span>CAMORA STUDIO</span></a>
+      <p>An independent web studio building websites, portfolios and landing pages for small businesses.</p>
+    </div>
+    <nav class="fcol" aria-label="Footer">
+      <h2>Explore</h2>
+      <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#team">Team</a></li><li><a href="#contact">Contact</a></li></ul>
+    </nav>
+    <div class="fcol">
+      <h2>Get in touch</h2>
+      <ul><li><a href="mailto:camorastudio3@gmail.com">camorastudio3@gmail.com</a></li><li><a href="#contact">Start a project</a></li></ul>
+    </div>
+    <div class="fcol">
+      <h2>Follow</h2>
+      <ul><li><a href="https://github.com/ambikaaa12" target="_blank" rel="noopener">GitHub</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap fbottom">
+    <span>&copy; 2026 CAMORA Studio. All rights reserved.</span>
+    <a href="#home">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+var d=document,h=d.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+h.classList.replace('no-js','js');
+var th=d.querySelector('.theme');
+function label(){th.setAttribute('aria-label',h.dataset.theme==='dark'?'Switch to light theme':'Switch to dark theme')}
+label();
+th.addEventListener('click',function(){var n=h.dataset.theme==='dark'?'light':'dark';h.dataset.theme=n;try{localStorage.setItem('camora-theme',n)}catch(e){}label()});
+var hd=d.querySelector('header'),btn=d.querySelector('.menu-btn'),menu=d.getElementById('menu');
+function setMenu(o){menu.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)}
+btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+d.addEventListener('click',function(e){if(!e.target.closest('header'))setMenu(false)});
+
+addEventListener('scroll',function(){hd.classList.toggle('scrolled',scrollY>20)},{passive:true});
+d.querySelectorAll('section:not(.hero) h2,.svc-card,.proj,.person,.contact .wrap>*').forEach(function(el){el.classList.add('rv');var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.style.setProperty('--d',(Math.min(i,4)*.1)+'s')});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+d.querySelectorAll('.rv').forEach(function(el){rm?el.classList.add('in'):io.observe(el)});
+var links=d.querySelectorAll('#menu a');
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})},{rootMargin:'-45% 0px -50% 0px'});
+d.querySelectorAll('main section[id]').forEach(function(s){spy.observe(s)});
+var f=d.getElementById('f'),st=d.getElementById('status'),sb=f.querySelector('button[type=submit]');
+d.querySelectorAll('.svc-card').forEach(function(c){c.querySelector('.more').addEventListener('click',function(){var s=f.querySelector('select');for(var i=0;i<s.options.length;i++)if(s.options[i].text===c.dataset.type)s.selectedIndex=i})});
+// Paste your Formspree URL or backend URL here, e.g. 'https://your-app.onrender.com/api/contact'
+var ENDPOINT='https://formspree.io/f/xzedowod';
+function mail(data){
+  var body='Name: '+data.name+'\nEmail: '+data.email+'\nProject type: '+data.type+'\n\n'+data.message;
+  st.className='note';st.textContent='Opening your email app. If nothing opens, email us at camorastudio3@gmail.com.';
+  location.href='mailto:camorastudio3@gmail.com?subject='+encodeURIComponent('Website enquiry from '+data.name)+'&body='+encodeURIComponent(body);
+}
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var fd=new FormData(f),data={name:fd.get('name'),email:fd.get('email'),type:fd.get('type'),message:fd.get('msg'),website:fd.get('website')};
+  if(data.website)return;
+  if(!ENDPOINT){mail(data);return}
+  sb.disabled=true;sb.textContent='Sending...';st.className='note';st.textContent='';
+  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){if(!r.ok)throw new Error();f.reset();st.className='note ok';st.textContent='Thank you. We have received your enquiry and will reply soon.'})
+    .catch(function(){mail(data)})
+    .finally(function(){sb.disabled=false;sb.textContent='Send enquiry'});
+});
+})();
+</script>
+</body>
+</html>
